@@ -17,8 +17,8 @@ import {
 } from "./style";
 import { Section } from "../../styles/global";
 
-import SearchBar from "./components/SearchBar";
-import Footer from "./components/Footer";
+import SearchBar from "../../components/SearchBar";
+import Footer from "../../components/Footer";
 
 const Home: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
