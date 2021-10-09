@@ -47,3 +47,9 @@ export const SubTtile = styled.div`
     text-align: right;
   }
 `;
+
+export const NewBookSection = styled.div`
+  width: 100%;
+  display: flex;
+  overflow-x: auto;
+`;
