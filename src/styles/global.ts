@@ -1,5 +1,7 @@
 import styled, { createGlobalStyle } from "styled-components";
 
+import SFPro from "../fonts/SF-Pro.ttf";
+
 export default createGlobalStyle`
     * {
         margin: 0;
@@ -11,21 +13,33 @@ export default createGlobalStyle`
         background: #F2F2F2;
         -webkit-font-smoothing: antialiased;
     }
-    body, input, button {
-        font: 16px 'Source Sans Pro', sans-serif;
+
+    @font-face {
+    src: url(${SFPro}) format('truetype');
+    font-display: auto;
+    font-family: 'SF Pro';
+    font-style: normal;
+    font-weight: 400;
     }
-    #root {
-        max-width: 960px;
-        margin: 0 auto;
-        padding: 40px 20px;
+    body, input, button {
+        font: 16px 'SF Pro', sans-serif;
+
     }
     button {
         cursor: pointer;
     }
+
+    a {
+        text-decoration: none;
+    }
 `;
 
 export const Section = styled.section`
-  height: 100vh;
+  height: auto;
+  min-height: 100vh;
+  padding: 40px 20px;
+  margin: 0 auto;
+  max-width: 960px;
 
   > * {
     margin-top: 30px;

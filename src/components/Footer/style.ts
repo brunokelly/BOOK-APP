@@ -5,15 +5,16 @@ export const FooterSection = styled.footer`
   height: 60px;
   background-color: #ffffff;
 
-  position: absolute;
+  position: fixed;
   left: 0;
   right: 0;
+  bottom: 0;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  gap: 88px;
+  gap: 80px;
 `;
 
 export const Button = styled.button`

@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, FooterSection } from "./style";
-import { Book } from "@material-ui/icons";
+import { Book, PersonOutline } from "@material-ui/icons";
 import { HomeWorkOutlined } from "@material-ui/icons";
 
 const Footer: React.FC = () => {
@@ -15,6 +15,7 @@ const Footer: React.FC = () => {
         <a href="/#">Libaries</a>
       </Button>
       <Button>
+        <PersonOutline />
         <a href="/#">Profile</a>
       </Button>
     </FooterSection>

@@ -51,8 +51,9 @@ export const ReadingNowSection = styled.div`
 `;
 
 export const Container = styled.div`
-  height: 139px;
-  width: 272px;
+  height: fit-content;
+  min-width: 272px;
+  width: fit-content;
 
   border-radius: 5px;
   padding: 17px 20px 17px 20px;
@@ -70,6 +71,8 @@ export const Container = styled.div`
     height: 111px;
     width: 72px;
     border-radius: 3px;
+
+    align-self: center;
   }
 `;
 
@@ -150,7 +153,7 @@ export const InfosReadingNow = styled.div`
   }
 
   h3 {
-    font-family: "Source Sans Pro", sans-serif;
+    font-family: "SF Pro", sans-serif;
     font-size: 12px;
     font-weight: 400;
     top: calc(50% - 12px / 2);
