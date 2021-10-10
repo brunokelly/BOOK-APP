@@ -1,22 +1,10 @@
-import React, { useCallback, useMemo, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useCallback, useRef, useState } from "react";
 import { FormHandles } from "@unform/core";
 import { Form } from "@unform/web";
 
 import { FiSearch } from "react-icons/fi";
 
-import {
-  Container,
-  ContainerReadingNow,
-  ContentSearch,
-  InfosContent,
-  InfosReadingNow,
-  NewBookSection,
-  ReadingNowSection,
-  SectionReadingNow,
-  SubTtile,
-  Title,
-} from "./style";
+import { ContentSearch, SubTtile, Title } from "./style";
 import { Section } from "../../styles/global";
 
 import SearchBar from "../../components/SearchBar";
@@ -24,6 +12,11 @@ import Footer from "../../components/Footer";
 import { IBook, IBookReponse } from "../../models";
 
 import api from "../../services/api";
+import { Button } from "../../components/Footer/style";
+import { HomeIcon, Libraries, Profile } from "../../assets/icons";
+import DiscoverNewBook from "./components/DiscoverNewBook";
+import ReadingNow from "./components/ReadingNow";
+import SearchResult from "./components/SearchResult";
 
 interface IBookSearch {
   search: string;
@@ -31,35 +24,24 @@ interface IBookSearch {
 
 const Home: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
-  const [books, setBooks] = useState<IBook[]>([]);
+
   const [booksSearch, setBooksSearch] = useState<IBook[]>([]);
-
-  const discoverNow = useCallback(async () => {
-    try {
-      await api
-        .get<IBookReponse>(
-          `https://www.googleapis.com/books/v1/volumes?q=flowers+inauthor:keyes&maxResults=3`
-        )
-        .then((response) => setBooks(response.data.items || null));
-    } catch (err) {}
-  }, []);
-
-  useMemo(() => {
-    discoverNow();
-  }, []);
+  const [isSearching, setIsSearching] = useState(false);
 
   const handleSubmitSearch = useCallback(async (data: IBookSearch) => {
     try {
       formRef.current?.setErrors({});
+
+      setIsSearching(true);
 
       await api
         .get<IBookReponse>(
           `https://www.googleapis.com/books/v1/volumes?q=${data.search}`
         )
         .then((response) => setBooksSearch(response.data.items || null));
-
-      console.log(booksSearch);
-    } catch (err) {}
+    } catch (err) {
+      console.error(err);
+    }
   }, []);
 
   return (
@@ -77,72 +59,55 @@ const Home: React.FC = () => {
           </Form>
         </ContentSearch>
 
-        <Title>
-          <p>
-            <h1>
-              Hi, <strong> Mehmed Al Fatih</strong>
-            </h1>
-          </p>
-        </Title>
+        {!isSearching ? (
+          <>
+            <Title>
+              <h1>
+                Hi, <strong> Mehmed Al Fatih</strong>
+              </h1>
+            </Title>
 
-        {/*DISCOVER NEW BOOK SECTION */}
-        <SubTtile>
-          <h2>Discover new book</h2>
+            {/*DISCOVER NEW BOOK SECTION */}
+            <SubTtile>
+              <h2>Discover new book</h2>
 
-          <a href="/#">More</a>
-        </SubTtile>
+              <a href="/#">More</a>
+            </SubTtile>
+            <DiscoverNewBook />
 
-        <NewBookSection>
-          {!!books &&
-            books.map((book) => (
-              <Link key={book.id} to={`/detail/${book.id}`}>
-                <Container>
-                  <InfosContent>
-                    <h1>{book.volumeInfo.title}</h1>
-                    <h2>{book.volumeInfo.authors}l</h2>
-                    <h3>120+ Read now</h3>
-                  </InfosContent>
+            {/*CURRENTLY READING SECTION */}
+            <SubTtile>
+              <h2>Currently Reading</h2>
+            </SubTtile>
 
-                  <img
-                    alt="book"
-                    src={book.volumeInfo.imageLinks.thumbnail}
-                  ></img>
-                </Container>
-              </Link>
-            ))}
-        </NewBookSection>
+            <ReadingNow />
 
-        {/*CURRENTLY READING SECTION */}
-        <SubTtile>
-          <h2>Currently Reading</h2>
-        </SubTtile>
+            {/*REVIEW OF THE DAY*/}
+            <SubTtile>
+              <h2>Review of the day</h2>
 
-        <ReadingNowSection>
-          <SectionReadingNow>
-            <img
-              alt="book"
-              src="https://images-na.ssl-images-amazon.com/images/I/41q7gZyFigL._SX342_SY445_QL70_ML2_.jpg"
-            />
-
-            <ContainerReadingNow>
-              <InfosReadingNow>
-                <h1>Originals</h1>
-                <h2>By Adam</h2>
-                <h3>Charpter </h3>
-              </InfosReadingNow>
-            </ContainerReadingNow>
-          </SectionReadingNow>
-        </ReadingNowSection>
-
-        {/*REVIEW OF THE DAY*/}
-        <SubTtile>
-          <h2>Review of the day</h2>
-
-          <a href="/#">All Videos</a>
-        </SubTtile>
+              <a href="/#">All Videos</a>
+            </SubTtile>
+          </>
+        ) : (
+          <SearchResult booksSearch={booksSearch} />
+        )}
       </Section>
 
-      <Footer />
+      <Footer>
+        <Button onClick={() => setIsSearching(false)}>
+          <HomeIcon />
+          <a href="/#">Home</a>
+        </Button>
+        <Button>
+          <Libraries />
+          <a href="/#">Libaries</a>
+        </Button>
+        <Button>
+          <Profile />
+          <a href="/#">Profile</a>
+        </Button>
+      </Footer>
     </>
   );
 };

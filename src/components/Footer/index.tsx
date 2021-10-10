@@ -1,24 +1,11 @@
 import React from "react";
-import { Button, FooterSection } from "./style";
-import { Book, PersonOutline } from "@material-ui/icons";
-import { HomeWorkOutlined } from "@material-ui/icons";
+import { FooterSection } from "./style";
 
-const Footer: React.FC = () => {
+const Footer: React.FC = ({ children }) => {
   return (
-    <FooterSection>
-      <Button>
-        <HomeWorkOutlined />
-        <a href="/#">Home</a>
-      </Button>
-      <Button>
-        <Book />
-        <a href="/#">Libaries</a>
-      </Button>
-      <Button>
-        <PersonOutline />
-        <a href="/#">Profile</a>
-      </Button>
-    </FooterSection>
+    <>
+      <FooterSection>{children}</FooterSection>
+    </>
   );
 };
 
