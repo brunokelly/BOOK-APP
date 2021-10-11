@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import Circle from "../../../../assets/img/Circle.png";
+
 export const NewBookSection = styled.div`
   width: 100%;
   display: flex;
@@ -51,6 +53,12 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   position: relative;
+
+  background-image: url(${Circle});
+  background-repeat: no-repeat;
+  background-position-y: 113%;
+  background-position-x: -14%;
+
   img {
     height: 111px;
     width: 72px;

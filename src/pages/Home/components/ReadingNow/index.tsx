@@ -1,4 +1,5 @@
 import React from "react";
+import { Circle, Rectangle } from "../../../../assets/shapes";
 
 import { Container, Infos, ReadingNowSection, Section } from "./style";
 
@@ -12,6 +13,20 @@ const ReadingNow: React.FC = () => {
         />
 
         <Container>
+          <Circle
+            styles={{
+              position: "absolute",
+              left: "69.95%",
+              top: "13.73%",
+            }}
+          />
+          <Rectangle
+            styles={{
+              position: "absolute",
+              left: "69.95%",
+              top: "13.73%",
+            }}
+          />
           <Infos>
             <h1>Originals</h1>
             <h2>By Adam</h2>

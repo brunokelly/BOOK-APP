@@ -1,17 +1,17 @@
 import React from "react";
 
 interface IShapes {
-  style: React.CSSProperties;
+  styles: React.CSSProperties;
 }
 
-export const Triangle = ({ style }: IShapes) => (
+export const Triangle = ({ styles }: IShapes) => (
   <svg
     width="34"
     height="30"
     viewBox="0 0 34 30"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    style={{ ...style }}
+    style={{ ...styles }}
   >
     <path
       fillRule="evenodd"
@@ -22,27 +22,27 @@ export const Triangle = ({ style }: IShapes) => (
   </svg>
 );
 
-export const Circle = ({ style }: IShapes) => (
+export const Circle = ({ styles }: IShapes) => (
   <svg
     width="20"
     height="20"
     viewBox="0 0 20 20"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    style={{ ...style }}
+    style={{ ...styles }}
   >
     <circle cx="10" cy="10" r="9" stroke="#4550A7" strokeWidth="2" />
   </svg>
 );
 
-export const Rectangle = ({ style }: IShapes) => (
+export const Rectangle = ({ styles }: IShapes) => (
   <svg
     width="46"
     height="16"
     viewBox="0 0 46 16"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    style={{ ...style }}
+    style={{ ...styles }}
   >
     <rect
       x="1.16704"

@@ -1,10 +1,15 @@
 import React, { useCallback, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+
+import api from "../../../../services/api";
+
+import { IBook, IBookReponse } from "../../../../models";
+
 import { ReadNow } from "../../../../assets/icons";
 import { Circle, Rectangle, Triangle } from "../../../../assets/shapes";
-import { IBook, IBookReponse } from "../../../../models";
-import api from "../../../../services/api";
 import { Container, InfosContent, NewBookSection } from "./style";
+
+//import CircleImage from "../../../../assets/img/Circle.png";
 
 const DiscoverNewBook: React.FC = () => {
   const [books, setBooks] = useState<IBook[]>([]);
@@ -32,24 +37,24 @@ const DiscoverNewBook: React.FC = () => {
           <Link key={book.id} to={`/detail/${book.id}`}>
             <Container>
               <Triangle
-                style={{
+                styles={{
                   position: "absolute",
-                  left: "61.95%",
-                  top: "2.73%",
+                  left: "69.95%",
+                  top: "13.73%",
                 }}
               />
               <Rectangle
-                style={{
+                styles={{
                   position: "absolute",
-                  left: "53.37%",
+                  left: "64.37%",
                   top: "68.7%",
                 }}
               />
               <Circle
-                style={{
+                styles={{
                   position: "absolute",
-                  left: "52.94%",
-                  top: "10.07%",
+                  left: "60.94%",
+                  top: "17.07%",
                 }}
               />
               <InfosContent>
@@ -61,7 +66,7 @@ const DiscoverNewBook: React.FC = () => {
                 </h3>
               </InfosContent>
 
-              <img alt="book" src={book.volumeInfo.imageLinks.thumbnail}></img>
+              <img alt="book" src={book.volumeInfo.imageLinks?.thumbnail}></img>
             </Container>
           </Link>
         ))}

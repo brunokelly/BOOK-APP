@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import Circle from "../../../../assets/img/Circle.png";
+
 export const ReadingNowSection = styled.div`
   width: 100%;
 `;
@@ -32,6 +34,11 @@ export const Container = styled.div`
   align-self: center;
   padding-left: 130px;
   gap: 10px;
+
+  background-image: url(${Circle});
+  background-repeat: no-repeat;
+  background-position-y: 200%;
+  background-position-x: 116%;
 `;
 
 export const Infos = styled.div`

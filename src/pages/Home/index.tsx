@@ -2,21 +2,20 @@ import React, { useCallback, useRef, useState } from "react";
 import { FormHandles } from "@unform/core";
 import { Form } from "@unform/web";
 
-import { FiSearch } from "react-icons/fi";
-
-import { ContentSearch, SubTtile, Title } from "./style";
-import { Section } from "../../styles/global";
+import api from "../../services/api";
 
 import SearchBar from "../../components/SearchBar";
 import Footer from "../../components/Footer";
-import { IBook, IBookReponse } from "../../models";
-
-import api from "../../services/api";
-import { Button } from "../../components/Footer/style";
-import { HomeIcon, Libraries, Profile } from "../../assets/icons";
 import DiscoverNewBook from "./components/DiscoverNewBook";
 import ReadingNow from "./components/ReadingNow";
 import SearchResult from "./components/SearchResult";
+
+import { Button } from "../../components/Footer/style";
+import { HomeIcon, Libraries, Profile } from "../../assets/icons";
+import { FiSearch } from "react-icons/fi";
+import { IBook, IBookReponse } from "../../models";
+import { ContentSearch, SubTtile, Title } from "./style";
+import { Section } from "../../styles/global";
 
 interface IBookSearch {
   search: string;
