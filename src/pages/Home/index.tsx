@@ -1,6 +1,7 @@
 import React, { useCallback, useRef, useState } from "react";
 import { FormHandles } from "@unform/core";
 import { Form } from "@unform/web";
+import { debounce } from "lodash";
 
 import api from "../../services/api";
 
@@ -27,21 +28,41 @@ const Home: React.FC = () => {
   const [booksSearch, setBooksSearch] = useState<IBook[]>([]);
   const [isSearching, setIsSearching] = useState(false);
 
-  const handleSubmitSearch = useCallback(async (data: IBookSearch) => {
-    try {
-      formRef.current?.setErrors({});
+  const handleSubmitSearch = useCallback(
+    debounce(async (search: string) => {
+      try {
+        formRef.current?.setErrors({});
 
-      setIsSearching(true);
+        setIsSearching(true);
 
-      await api
-        .get<IBookReponse>(
-          `https://www.googleapis.com/books/v1/volumes?q=${data.search}`
-        )
-        .then((response) => setBooksSearch(response.data.items || null));
-    } catch (err) {
-      console.error(err);
-    }
-  }, []);
+        await api
+          .get<IBookReponse>(
+            `https://www.googleapis.com/books/v1/volumes?q=${search}`
+          )
+          .then((response) => setBooksSearch(response.data.items || null));
+
+        console.log(search);
+        console.log(`https://www.googleapis.com/books/v1/volumes?q=${search}`);
+      } catch (err) {
+        console.error(err);
+      }
+    }, 500),
+    []
+  );
+
+  const handleSearch = useCallback(
+    (data: React.ChangeEvent<HTMLInputElement>): void => {
+      try {
+        if (data.target.value === "") {
+          setIsSearching(false);
+        } else {
+          setIsSearching(true);
+          handleSubmitSearch(data.target.value);
+        }
+      } catch (err) {}
+    },
+    [setIsSearching, handleSubmitSearch]
+  );
 
   return (
     <>
@@ -54,6 +75,7 @@ const Home: React.FC = () => {
               icon={FiSearch}
               placeholder="Search Book"
               type="search"
+              onChange={handleSearch}
             />
           </Form>
         </ContentSearch>

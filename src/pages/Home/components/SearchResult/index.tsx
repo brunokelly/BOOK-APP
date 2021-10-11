@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { IBook } from "../../../../models";
 import { BookFromSearch, Section } from "./style";
 
+import NoImageFound from "../../../../assets/img/NoImageFound.png";
+
 interface IBookResult {
   booksSearch: Array<IBook>;
 }
@@ -15,7 +17,11 @@ const SearchResult: React.FC<IBookResult> = ({ booksSearch }: IBookResult) => {
           <Link key={book.id} to={`/detail/${book.id}`}>
             <BookFromSearch>
               <img
-                src={book.volumeInfo.imageLinks?.thumbnail}
+                src={
+                  book.volumeInfo.imageLinks
+                    ? book.volumeInfo.imageLinks.thumbnail
+                    : NoImageFound
+                }
                 alt={book.volumeInfo.title}
               />
 
