@@ -23,6 +23,24 @@ export const Section = styled.section`
   a {
     width: fit-content;
     display: flex;
+    opacity: 100;
+    transition: transform 0.2s;
+    animation: slideInFromBottom 1s;
+    &:hover {
+      transform: translateY(10px);
+      margin-bottom: 5px;
+    }
+
+    @keyframes slideInFromBottom {
+      0% {
+        transform: translateY(100%);
+        opacity: 0;
+      }
+      100% {
+        opacity: 100;
+        transform: translateY(0);
+      }
+    }
   }
 `;
 

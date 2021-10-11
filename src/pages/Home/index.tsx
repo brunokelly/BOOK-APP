@@ -31,18 +31,22 @@ const Home: React.FC = () => {
   const handleSubmitSearch = useCallback(
     debounce(async (search: string) => {
       try {
-        formRef.current?.setErrors({});
+        if (search !== "") {
+          formRef.current?.setErrors({});
 
-        setIsSearching(true);
+          setIsSearching(true);
 
-        await api
-          .get<IBookReponse>(
+          await api
+            .get<IBookReponse>(
+              `https://www.googleapis.com/books/v1/volumes?q=${search}`
+            )
+            .then((response) => setBooksSearch(response.data.items || null));
+
+          console.log(search);
+          console.log(
             `https://www.googleapis.com/books/v1/volumes?q=${search}`
-          )
-          .then((response) => setBooksSearch(response.data.items || null));
-
-        console.log(search);
-        console.log(`https://www.googleapis.com/books/v1/volumes?q=${search}`);
+          );
+        }
       } catch (err) {
         console.error(err);
       }
