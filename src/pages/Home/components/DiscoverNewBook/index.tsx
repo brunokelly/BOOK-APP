@@ -21,6 +21,13 @@ const DiscoverNewBook: React.FC = () => {
           `https://www.googleapis.com/books/v1/volumes?q=flowers&orderBy=newest&maxResults=3`
         )
         .then((response) => setBooks(response.data.items || null));
+
+      books.forEach((book) => {
+        book.volumeInfo.title =
+          book.volumeInfo.title.length < 20
+            ? book.volumeInfo.title
+            : book.volumeInfo.title.slice(20);
+      });
     } catch (err) {
       console.error(err);
     }

@@ -47,7 +47,6 @@ export const Container = styled.div`
   margin: 0px 10px 0 10px;
 
   background: #00173d;
-  box-shadow: 2px 4px 48px rgba(154, 175, 209, 0.62134);
   border-radius: 5px;
 
   display: flex;

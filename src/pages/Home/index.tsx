@@ -17,16 +17,16 @@ import { FiSearch } from "react-icons/fi";
 import { IBook, IBookReponse } from "../../models";
 import { ContentSearch, SubTtile, Title } from "./style";
 import { Section } from "../../styles/global";
+import Review from "./components/ReviewOfTheDay";
 
-interface IBookSearch {
-  search: string;
-}
+let DEFAULT_MAX = 40;
 
 const Home: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
 
   const [booksSearch, setBooksSearch] = useState<IBook[]>([]);
   const [isSearching, setIsSearching] = useState(false);
+  const [search, setSearch] = useState("");
 
   const handleSubmitSearch = useCallback(
     debounce(async (search: string) => {
@@ -38,14 +38,11 @@ const Home: React.FC = () => {
 
           await api
             .get<IBookReponse>(
-              `https://www.googleapis.com/books/v1/volumes?q=${search}`
+              `https://www.googleapis.com/books/v1/volumes?q=${search}&maxResults=${DEFAULT_MAX}`
             )
             .then((response) => setBooksSearch(response.data.items || null));
-
-          console.log(search);
-          console.log(
-            `https://www.googleapis.com/books/v1/volumes?q=${search}`
-          );
+        } else {
+          setIsSearching(false);
         }
       } catch (err) {
         console.error(err);
@@ -57,11 +54,13 @@ const Home: React.FC = () => {
   const handleSearch = useCallback(
     (data: React.ChangeEvent<HTMLInputElement>): void => {
       try {
+        data.preventDefault();
         if (data.target.value === "") {
           setIsSearching(false);
         } else {
           setIsSearching(true);
           handleSubmitSearch(data.target.value);
+          setSearch(data.target.value);
         }
       } catch (err) {}
     },
@@ -113,6 +112,8 @@ const Home: React.FC = () => {
 
               <a href="/#">All Videos</a>
             </SubTtile>
+
+            <Review />
           </>
         ) : (
           <SearchResult booksSearch={booksSearch} />

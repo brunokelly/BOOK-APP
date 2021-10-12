@@ -8,18 +8,18 @@ export const HomeIcon = () => (
   >
     <path
       fillRule="evenodd"
-      clip-rule="evenodd"
+      clipRule="evenodd"
       d="M1 6.22222L9 0L17 6.22222V16C17 16.9818 16.2041 17.7778 15.2222 17.7778H2.77778C1.79594 17.7778 1 16.9818 1 16V6.22222Z"
       stroke="black"
       strokeWidth="2"
-      stroke-linecap="round"
+      strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
       d="M6.33333 17.7778V8.88892H11.6667V17.7778"
       stroke="black"
       strokeWidth="2"
-      stroke-linecap="round"
+      strokeLinecap="round"
       strokeLinejoin="round"
     />
   </svg>
@@ -37,16 +37,16 @@ export const Libraries = () => (
       d="M1 15.75C1 14.5074 2.00736 13.5 3.25 13.5H15.4"
       stroke="#BFBEBF"
       strokeWidth="2"
-      stroke-linecap="round"
+      strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
       fillRule="evenodd"
-      clip-rule="evenodd"
+      clipRule="evenodd"
       d="M3.25 0H15.4V18H3.25C2.00736 18 1 16.9926 1 15.75V2.25C1 1.00736 2.00736 0 3.25 0Z"
       stroke="#BFBEBF"
       strokeWidth="2"
-      stroke-linecap="round"
+      strokeLinecap="round"
       strokeLinejoin="round"
     />
   </svg>
@@ -64,7 +64,7 @@ export const Profile = () => (
       d="M17 18V16C17 13.7909 15.2091 12 13 12H5C2.79086 12 1 13.7909 1 16V18"
       stroke="#BFBEBF"
       strokeWidth="2"
-      stroke-linecap="round"
+      strokeLinecap="round"
       strokeLinejoin="round"
     />
     <circle
@@ -73,7 +73,7 @@ export const Profile = () => (
       r="4"
       stroke="#BFBEBF"
       strokeWidth="2"
-      stroke-linecap="round"
+      strokeLinecap="round"
       strokeLinejoin="round"
     />
   </svg>
@@ -89,20 +89,20 @@ export const BookOpen = () => (
   >
     <path
       fillRule="evenodd"
-      clip-rule="evenodd"
+      clipRule="evenodd"
       d="M0 0H4.8C6.56731 0 8 1.59188 8 3.55556V16C8 14.5272 6.92548 13.3333 5.6 13.3333H0V0Z"
       stroke="#CFCBD2"
       strokeWidth="2"
-      stroke-linecap="round"
+      strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
       fillRule="evenodd"
-      clip-rule="evenodd"
+      clipRule="evenodd"
       d="M16 0H11.2C9.43269 0 8 1.59188 8 3.55556V16C8 14.5272 9.07452 13.3333 10.4 13.3333H16V0Z"
       stroke="#CFCBD2"
       strokeWidth="2"
-      stroke-linecap="round"
+      strokeLinecap="round"
       strokeLinejoin="round"
     />
   </svg>
@@ -120,7 +120,7 @@ export const HeadPhone = () => (
       d="M0 13.3333V8C6.58375e-08 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8V13.3333"
       stroke="#CFCBD2"
       strokeWidth="2"
-      stroke-linecap="round"
+      strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
@@ -142,21 +142,21 @@ export const Share = () => (
       d="M0 8V14.4C0 15.2837 0.716344 16 1.6 16H11.2C12.0837 16 12.8 15.2837 12.8 14.4V8"
       stroke="#CFCBD2"
       strokeWidth="2"
-      stroke-linecap="round"
+      strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
       d="M9.60001 3.2L6.40001 0L3.20001 3.2"
       stroke="#CFCBD2"
       strokeWidth="2"
-      stroke-linecap="round"
+      strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
       d="M6.40002 0V10.4"
       stroke="#CFCBD2"
       stroke-width="2"
-      stroke-linecap="round"
+      strokeLinecap="round"
       strokeLinejoin="round"
     />
   </svg>
@@ -174,14 +174,14 @@ export const BackButton = () => (
       d="M15 8H1"
       stroke="black"
       strokeWidth="2"
-      stroke-linecap="round"
+      strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
       d="M8 15L1 8L8 1"
       stroke="black"
       strokeWidth="2"
-      stroke-linecap="round"
+      strokeLinecap="round"
       strokeLinejoin="round"
     />
   </svg>

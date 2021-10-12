@@ -19,6 +19,7 @@ export const Section = styled.div`
     position: absolute;
     align-self: center;
     padding-left: 19px;
+    z-index: 1;
   }
 `;
 
@@ -29,19 +30,23 @@ export const Container = styled.div`
 
   height: 100px;
   width: 70%;
+  min-width: 330px;
 
   display: flex;
   align-self: center;
   padding-left: 130px;
   gap: 10px;
 
+  position: relative;
+
   background-image: url(${Circle});
   background-repeat: no-repeat;
-  background-position-y: 200%;
-  background-position-x: 116%;
+  background-position-y: 233%;
+  background-position-x: 134%;
 `;
 
 export const Infos = styled.div`
+  padding-left: 10px;
   h1 {
     letter-spacing: 2px;
     font-size: 27px;

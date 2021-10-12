@@ -5,19 +5,20 @@ export const Section = styled.section`
   height: 100%;
 
   display: grid;
-  grid-template-columns: repeat(4, 100px);
+  grid-template-columns: repeat(4, 160px);
   grid-template-rows: auto;
 
   justify-content: space-between;
   row-gap: 12px;
+  justify-items: center;
 
   @media (max-width: 700px) {
-    grid-template-columns: repeat(3, 100px);
+    grid-template-columns: repeat(3, 160px);
     padding: 10px;
   }
 
   @media (max-width: 500px) {
-    grid-template-columns: repeat(2, 100px);
+    grid-template-columns: repeat(2, 160px);
   }
 
   a {
