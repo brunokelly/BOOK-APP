@@ -26,8 +26,10 @@ const Home: React.FC = () => {
 
   const [booksSearch, setBooksSearch] = useState<IBook[]>([]);
   const [isSearching, setIsSearching] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [search, setSearch] = useState("");
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleSubmitSearch = useCallback(
     debounce(async (search: string) => {
       try {

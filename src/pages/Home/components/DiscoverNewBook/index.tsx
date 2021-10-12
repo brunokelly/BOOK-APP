@@ -31,7 +31,7 @@ const DiscoverNewBook: React.FC = () => {
     } catch (err) {
       console.error(err);
     }
-  }, []);
+  }, [books]);
 
   useMemo(() => {
     discoverNow();
