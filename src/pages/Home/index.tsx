@@ -131,7 +131,7 @@ const Home: React.FC = () => {
         </Button>
         <Button>
           <Libraries />
-          <a href="/#">Libaries</a>
+          <a href="/#">Libraries</a>
         </Button>
         <Button>
           <Profile />
