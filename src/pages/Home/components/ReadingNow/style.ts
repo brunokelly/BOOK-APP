@@ -58,7 +58,6 @@ export const Container = styled.div`
     font-style: normal;
     font-weight: 300;
     line-height: 12px;
-    letter-spacing: 0px;
     text-align: left;
     color: #74776d;
   }
