@@ -20,17 +20,20 @@ const DiscoverNewBook: React.FC = () => {
         .get<IBookReponse>(
           `https://www.googleapis.com/books/v1/volumes?q=flowers&orderBy=newest&maxResults=3`
         )
-        .then((response) => setBooks(response.data.items || null));
+        .then((response) => {
+          response.data.items.forEach((book) => {
+            book.volumeInfo.title =
+              book.volumeInfo.title.length > 20
+                ? book.volumeInfo.title.slice(0, 20).concat("...")
+                : book.volumeInfo.title;
+          });
 
-      books.forEach((book) => {
-        book.volumeInfo.title =
-          book.volumeInfo.title.length < 20
-            ? book.volumeInfo.title
-            : book.volumeInfo.title.slice(20);
-      });
+          setBooks(response.data.items || null);
+        });
     } catch (err) {
       console.error(err);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useMemo(() => {
@@ -69,7 +72,7 @@ const DiscoverNewBook: React.FC = () => {
                 <h2>{book.volumeInfo.authors}l</h2>
 
                 <h3>
-                  <ReadNow /> 120+ Read now
+                  <ReadNow /> 120+ Read Now
                 </h3>
               </InfosContent>
 

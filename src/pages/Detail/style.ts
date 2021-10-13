@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { CircleTwo, Circle } from "../../assets/img";
 
 export const HeaderSection = styled.div`
   display: flex;
@@ -7,6 +8,11 @@ export const HeaderSection = styled.div`
 
   height: 300px;
   justify-content: center;
+
+  background-image: url(${Circle});
+  background-repeat: no-repeat;
+  background-position-x: 105%;
+  background-position-y: -22%;
 `;
 
 export const SectionDetail = styled.div`
@@ -22,15 +28,6 @@ export const SectionDetail = styled.div`
   > * {
     margin-top: 10px;
     margin-bottom: 10px;
-  }
-
-  img {
-    height: 234px;
-    width: 151px;
-
-    border-radius: 0px;
-    justify-self: center;
-    align-self: center;
   }
 
   span > * {
@@ -72,7 +69,7 @@ export const SectionDetail = styled.div`
 `;
 
 export const FooterBar = styled.div`
-  width: 500px;
+  width: 330px;
   height: 56px;
   padding: 20px 20px;
   bottom: 0.5px;
@@ -103,5 +100,30 @@ export const FooterBar = styled.div`
       align-self: center;
       justify-self: center;
     }
+  }
+`;
+
+export const ImageContainer = styled.div`
+  width: 200px;
+
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  position: relative;
+
+  background-image: url(${CircleTwo});
+  background-repeat: no-repeat;
+  background-position: right 79%;
+
+  background-size: 20%;
+  img {
+    height: 234px;
+    width: 151px;
+
+    border-radius: 0px;
+    justify-self: center;
+    align-self: center;
+
+    z-index: 1;
   }
 `;

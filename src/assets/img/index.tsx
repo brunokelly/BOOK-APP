@@ -1,3 +1,6 @@
-import Circle from "../img/Circle.png";
+import CircleIMG from "../img/Circle.png";
+import CircleTwoImg from "../img/CircleTwo.png";
 
-export default Circle;
+export const Circle = () => CircleIMG;
+
+export const CircleTwo = () => CircleTwoImg;

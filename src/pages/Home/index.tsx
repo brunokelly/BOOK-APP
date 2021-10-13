@@ -82,6 +82,7 @@ const Home: React.FC = () => {
               placeholder="Search Book"
               type="search"
               onChange={handleSearch}
+              defaultValue=""
             />
           </Form>
         </ContentSearch>
@@ -90,7 +91,7 @@ const Home: React.FC = () => {
           <>
             <Title>
               <h1>
-                Hi, <strong> Mehmed Al Fatih</strong>
+                Hi, <strong> Mehmed Al Fatih 👋</strong>
               </h1>
             </Title>
 

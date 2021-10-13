@@ -12,7 +12,8 @@ export const InfosContent = styled.div`
   color: white;
 
   width: 60%;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
 
   h1 {
     letter-spacing: 2px;
@@ -33,6 +34,10 @@ export const InfosContent = styled.div`
     font-family: "SF Pro", sans-serif;
     font-size: 12px;
     font-weight: 400;
+    margin-top: auto;
+    justify-self: center;
+    white-space: pre;
+    display: flex;
   }
 `;
 

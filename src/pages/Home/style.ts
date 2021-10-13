@@ -10,6 +10,7 @@ export const ContentSearch = styled.div`
 export const Title = styled.div`
   h1 {
     display: flex;
+    align-items: baseline;
     font-size: 24px;
     font-weight: 400;
     white-space: pre;

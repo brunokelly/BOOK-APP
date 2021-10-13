@@ -6,8 +6,14 @@ import api from "../../services/api";
 
 import { IBook, IDetailParams } from "../../models";
 
-import { FooterBar, HeaderSection, SectionDetail } from "./style";
+import {
+  FooterBar,
+  HeaderSection,
+  ImageContainer,
+  SectionDetail,
+} from "./style";
 import { BackButton, BookOpen, HeadPhone, Share } from "../../assets/icons";
+import { Circle, HugeCircle, SmallPinkCircle } from "../../assets/shapes";
 
 const Detail: React.FC = () => {
   const [bookDetail, setBookDetail] = useState<IBook>();
@@ -39,10 +45,27 @@ const Detail: React.FC = () => {
 
           {bookDetail && (
             <>
-              <img
-                alt="book"
-                src={bookDetail.volumeInfo.imageLinks?.thumbnail}
-              />
+              <ImageContainer>
+                <HugeCircle
+                  styles={{ position: "absolute", left: "-9%", top: "15%" }}
+                />
+                <SmallPinkCircle
+                  styles={{ position: "absolute", left: "-21%", top: "17%" }}
+                />
+                <Circle
+                  styles={{
+                    position: "absolute",
+                    left: "82%",
+                    top: "7%",
+                    width: "24px",
+                    height: "24px",
+                  }}
+                />
+                <img
+                  alt="book"
+                  src={bookDetail.volumeInfo.imageLinks?.thumbnail}
+                />
+              </ImageContainer>
               <h1>
                 <strong>{bookDetail.volumeInfo.title}</strong>:{" "}
                 {bookDetail.volumeInfo.subtitle}
