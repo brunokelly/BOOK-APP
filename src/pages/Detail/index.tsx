@@ -4,7 +4,7 @@ import { useHistory, useRouteMatch } from "react-router";
 
 import api from "../../services/api";
 
-import { IBook, IDetailParams } from "../../models";
+import { IBook, IBookReponse, IDetailParams } from "../../models";
 
 import {
   FooterBar,
@@ -24,7 +24,9 @@ const Detail: React.FC = () => {
   useEffect(() => {
     try {
       api
-        .get(`https://www.googleapis.com/books/v1/volumes/${params.detail}`)
+        .get<IBook>(
+          `https://www.googleapis.com/books/v1/volumes/${params.detail}`
+        )
         .then((response) => {
           setBookDetail(response.data || null);
         });
