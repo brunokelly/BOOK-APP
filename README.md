@@ -13,4 +13,4 @@ This challenge was proposed by the company 'Foton Tech' to test technical skills
 
 ## [Live Preview](https://book-app-virid.vercel.app/)
 
-![live preview](https://i.imgur.com/oIhrYytm.gif)
+![live preview](https://i.ibb.co/g4DHz9t/Sem-T-tulo-1.gif)
