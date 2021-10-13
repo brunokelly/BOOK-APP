@@ -12,3 +12,5 @@ This challenge was proposed by the company 'Foton Tech' to test technical skills
 - Styled-components
 
 ## [Live Preview](https://book-app-virid.vercel.app/)
+
+![live preview](https://i.imgur.com/oIhrYyt.gif)
