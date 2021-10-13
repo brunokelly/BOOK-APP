@@ -56,7 +56,7 @@ export const SectionDetail = styled.div`
     color: #ff6978;
   }
 
-  h3 {
+  > p {
     font-family: "SF Pro", sans-serif;
     font-size: 14px;
     line-height: 25px;
@@ -66,6 +66,8 @@ export const SectionDetail = styled.div`
 
     color: rgba(49, 49, 49, 0.6);
     z-index: -1;
+
+    white-space: pre-line;
   }
 `;
 

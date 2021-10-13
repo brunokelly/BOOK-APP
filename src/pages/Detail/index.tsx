@@ -48,7 +48,7 @@ const Detail: React.FC = () => {
                 {bookDetail.volumeInfo.subtitle}
               </h1>
               <h2>{bookDetail.volumeInfo.authors}</h2>
-              <h3>{bookDetail.volumeInfo.description}</h3>
+              <p>{bookDetail.volumeInfo.description}</p>
             </>
           )}
 

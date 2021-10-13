@@ -59,6 +59,7 @@ const Home: React.FC = () => {
         data.preventDefault();
         if (data.target.value === "") {
           setIsSearching(false);
+          setBooksSearch([]);
         } else {
           setIsSearching(true);
           handleSubmitSearch(data.target.value);

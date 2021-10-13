@@ -12,6 +12,7 @@ export const Title = styled.div`
     display: flex;
     font-size: 24px;
     font-weight: 400;
+    white-space: pre;
 
     strong {
       font-weight: 600;

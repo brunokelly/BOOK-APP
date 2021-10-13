@@ -55,7 +55,7 @@ export const Rectangle = ({ styles }: IShapes) => (
   </svg>
 );
 
-export const BookCharpter = ({ styles }: IShapes) => (
+export const BookCharpter = () => (
   <svg
     width="16"
     height="16"

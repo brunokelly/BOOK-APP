@@ -15,6 +15,7 @@ export const FooterSection = styled.footer`
   justify-content: center;
 
   gap: 80px;
+  z-index: 10;
 `;
 
 export const Button = styled.button`
